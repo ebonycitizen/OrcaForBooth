@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Core
+  - Line
+  - PalmTrigger
+  - ThumbTrigger
+  - FingerTrigger
+  - Clean
+  - LockOn
+  - Enemy
+  - Water
+  - FxTemporaire
+  - PenguinStop
+  - G_Jump
+  - G_Tutorial
+  - G_Idle
+  - G_Come
+  - G_ElectricShock
+  - G_Kick
+  - G_Swim
+  - LeftApproach
+  - RightApproach
+  - G_Approach
+  - G_PlayerJump
+  - G_Click
+  - Water Volume
+  - G_Scroll
+  - G_Attack
+  - D_Swim
+  - D_Jump
+  - D_Come
+  - G_LightUp
+  - DeepLight
+  - G_PenguinSinging
+  - Jump
+  - G_Dissapear
+  - D_DefaultSwim
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - PostProcessing
+  - IgnoreProjection
+  - Player
+  - Hand
+  - ApproachTrigger
+  - Dolly
+  - Head
+  - Grass
+  - Fish
+  - Stage
+  - Glitter
+  - Scroll
+  - FloatObj
+  - DolphinGlitter
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
