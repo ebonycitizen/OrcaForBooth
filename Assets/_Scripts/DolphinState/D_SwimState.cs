@@ -35,7 +35,7 @@ public partial class DolphinState
             boid.enabled = false;
             simulation.RemoveVoid(boid);
 
-            s.Pause();
+            s.Complete();
         }
         
         private void Shout()

@@ -3940,9 +3940,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDebug: 0
   setForward: 30
-  forward: {x: 0, y: 0.014073395, z: 0, w: 0.999901}
-  forwardDig: {x: -0, y: 1.6127455, z: 0}
-  forwardPos: {x: 82.74664, y: 0, z: -105.79767}
+  forward: {x: 0, y: 0.014075472, z: 0, w: 0.99990094}
+  forwardDig: {x: -0, y: 1.6129836, z: 0}
+  forwardPos: {x: 82.74759, y: 0, z: -105.76419}
   m_Path: {fileID: 1899764986}
   m_UpdateMethod: 0
   m_PositionUnits: 1
@@ -18719,6 +18719,40 @@ Transform:
   m_Father: {fileID: 845124471}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &647923454
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &650598722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21116,40 +21150,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!21 &880839864
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &899808040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30372,12 +30372,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 880839864}
+      objectReference: {fileID: 647923454}
     - target: {fileID: 3765551871927871008, guid: 16074907dd55a324187b5b21cdf07551,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1597534232}
+      objectReference: {fileID: 1413432633}
     - target: {fileID: 8169514499329488538, guid: 16074907dd55a324187b5b21cdf07551,
         type: 3}
       propertyPath: rayObject
@@ -38788,6 +38788,166 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 2093431ed7de6964d8a3225a300d1907, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e54c9cfc3edd25b429d3692071a33f28, type: 3}
+--- !u!43 &1413432633
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 9
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 24
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 8
+    localAABB:
+      m_Center: {x: 0, y: 0.01, z: 0}
+      m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
+  m_VertexData:
+    serializedVersion: 2
+    m_VertexCount: 8
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 28
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 288
+    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0.01, z: 0}
+    m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimized: 0
+  m_StreamData:
+    offset: 0
+    size: 0
+    path: 
 --- !u!1001 &1413775337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42062,166 +42222,6 @@ Transform:
   m_Father: {fileID: 612319185}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &1597534232
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 9
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 24
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 8
-    localAABB:
-      m_Center: {x: 0, y: 0.01, z: 0}
-      m_Extent: {x: 1.65, y: 0, z: 1.275}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
-  m_VertexData:
-    serializedVersion: 2
-    m_VertexCount: 8
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 28
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 288
-    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0.01, z: 0}
-    m_Extent: {x: 1.65, y: 0, z: 1.275}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimized: 0
-  m_StreamData:
-    offset: 0
-    size: 0
-    path: 
 --- !u!1 &1597666005
 GameObject:
   m_ObjectHideFlags: 0
@@ -50805,95 +50805,131 @@ MonoBehaviour:
   - position: {x: 98.610275, y: 8.455437, z: 499.0586}
     tangent: {x: -5.783386, y: 0.00028324127, z: 40.664673}
     roll: 0
-  - position: {x: 87.58761, y: 9.733551, z: 590.23395}
+  - position: {x: 87.58761, y: 6.3008156, z: 590.23395}
     tangent: {x: -1.7595978, y: -0.94231796, z: 37.50055}
     roll: 0
-  - position: {x: 90.07832, y: 8.236801, z: 730.2316}
-    tangent: {x: 1.7515869, y: -0.7742691, z: 28.12799}
+  - position: {x: 90.07832, y: 0.2420578, z: 730.2316}
+    tangent: {x: 1.2978439, y: -0.78845215, z: 28.12799}
     roll: 0
-  - position: {x: 98.2143, y: 6.106037, z: 888.2113}
-    tangent: {x: -0.64450836, y: -0.20750809, z: 35.10974}
+  - position: {x: 95.0182, y: -7.332176, z: 864.9518}
+    tangent: {x: 1.0892258, y: -0.20750809, z: 29.09436}
     roll: 0
-  - position: {x: 99.49001, y: -4.185183, z: 1633.3596}
-    tangent: {x: 10.397102, y: -0.5482111, z: 17.888794}
+  - position: {x: 83.559494, y: -7.613547, z: 933.2864}
+    tangent: {x: 2.6996841, y: -0.5482116, z: 29.038696}
     roll: 0
-  - position: {x: 117.151726, y: -6.6156616, z: 1701.0934}
-    tangent: {x: 2.450119, y: -0.8057456, z: 15.349976}
+  - position: {x: 108.2322, y: -4.388912, z: 988.41516}
+    tangent: {x: 11.720299, y: -0.3740821, z: 13.653198}
     roll: 0
-  - position: {x: 118.95201, y: -13.766426, z: 1755.7866}
-    tangent: {x: -0.91496277, y: -4.4893494, z: 28.39563}
+  - position: {x: 132.63214, y: -6.0685425, z: 1053.8075}
+    tangent: {x: 4.0470886, y: -1.567131, z: 29.322754}
     roll: 0
-  - position: {x: 105.86698, y: -37.770584, z: 1849.2693}
-    tangent: {x: -3.9642944, y: -5.9543343, z: 17.507568}
+  - position: {x: 137.10478, y: -13.480419, z: 1123.513}
+    tangent: {x: -0.3924713, y: -2.607872, z: 18.962646}
     roll: 0
-  - position: {x: 60.617603, y: -47.10015, z: 1962.4185}
-    tangent: {x: -8.652664, y: 0.37078094, z: 18.280762}
+  - position: {x: 127.811455, y: -31.330624, z: 1196.0143}
+    tangent: {x: -5.7867203, y: -6.861515, z: 20.296753}
     roll: 0
-  - position: {x: 21.725273, y: -48.330845, z: 2066.248}
-    tangent: {x: -12.142378, y: -1.2095184, z: 40.622803}
+  - position: {x: 106.085846, y: -45.41856, z: 1267.5254}
+    tangent: {x: -15.597656, y: -1.2095184, z: 35.387817}
     roll: 0
-  - position: {x: 5.0589466, y: -50.437973, z: 2206.5327}
-    tangent: {x: -1.7440269, y: -0.5515442, z: 51.63037}
+  - position: {x: 55.53108, y: -47.929012, z: 1386.1915}
+    tangent: {x: -16.63757, y: -0.5515442, z: 46.322388}
     roll: 0
-  - position: {x: 42.18381, y: -45.88166, z: 2345.714}
-    tangent: {x: 18.879696, y: 3.079094, z: 52.273193}
+  - position: {x: 31.558271, y: -48.594463, z: 1469.8289}
+    tangent: {x: -7.6732044, y: 0.4918518, z: 40.838135}
     roll: 0
-  - position: {x: 124.098114, y: 0.9711628, z: 2496.0193}
-    tangent: {x: 22.336746, y: 32.930817, z: 31.458496}
+  - position: {x: 37.480644, y: -47.724422, z: 1570.6512}
+    tangent: {x: 15.055901, y: 3.077221, z: 35.9198}
     roll: 0
-  - position: {x: 171.43178, y: 67.0664, z: 2579.4023}
-    tangent: {x: 7.516983, y: 1.9013138, z: 26.624512}
+  - position: {x: 93.362595, y: -33.877113, z: 1671.2722}
+    tangent: {x: 21.11753, y: 5.5844574, z: 32.494507}
     roll: 0
-  - position: {x: 183.615, y: 14.831741, z: 2670.0693}
-    tangent: {x: -7.655197, y: -6.5182953, z: 32.922607}
+  - position: {x: 143.67773, y: 16.436241, z: 1745.238}
+    tangent: {x: 14.352814, y: 20.434307, z: 22.30066}
     roll: 0
-  - position: {x: 152.86043, y: -31.000347, z: 2778.1787}
-    tangent: {x: -10.382599, y: -24.49245, z: 53.095703}
+  - position: {x: 179.50351, y: 67.58036, z: 1808.7407}
+    tangent: {x: 11.014877, y: 6.291931, z: 26.180908}
     roll: 0
-  - position: {x: 134.89178, y: -90.725235, z: 2937.3333}
-    tangent: {x: -15.904266, y: -0.01134491, z: 25.72583}
+  - position: {x: 195.45059, y: 27.515186, z: 1878.3359}
+    tangent: {x: -0.2780304, y: -6.303135, z: 10.952637}
     roll: 0
-  - position: {x: 99.33031, y: -89.97285, z: 2990.26}
-    tangent: {x: -10.204948, y: 0.10951996, z: 17.370361}
+  - position: {x: 190.29999, y: 12.104153, z: 1913.3369}
+    tangent: {x: -5.75679, y: -7.1321526, z: 23.031006}
     roll: 0
-  - position: {x: 61.352695, y: -88.20637, z: 3085.2256}
-    tangent: {x: -6.0632706, y: -8.180939, z: 40.44751}
+  - position: {x: 169.39162, y: -27.645664, z: 2005.125}
+    tangent: {x: -3.7663422, y: -10.10318, z: 19.170166}
     roll: 0
-  - position: {x: 53.890484, y: -121.91109, z: 3234.4019}
-    tangent: {x: -0.008224487, y: -2.6246567, z: 14.447754}
+  - position: {x: 155.82028, y: -59.064198, z: 2072.0867}
+    tangent: {x: -3.3592377, y: -5.961315, z: 19.70996}
     roll: 0
-  - position: {x: 53.863583, y: -140.52301, z: 3409.212}
-    tangent: {x: 0.011787415, y: -0.72665405, z: 74.96338}
+  - position: {x: 138.64609, y: -77.03748, z: 2154.3499}
+    tangent: {x: -7.266876, y: -6.5624695, z: 29.39746}
     roll: 0
-  - position: {x: 55.941246, y: -136.76299, z: 4629.8354}
-    tangent: {x: 0.7049408, y: -0.72665405, z: 23.253418}
+  - position: {x: 97.47754, y: -81.54985, z: 2248.8809}
+    tangent: {x: -8.934631, y: 0.056159973, z: 13.878906}
     roll: 0
-  - position: {x: 56.415157, y: -138.73727, z: 4705.215}
-    tangent: {x: -0.37001038, y: -5.4907227, z: 22.051758}
+  - position: {x: 77.83086, y: -83.68216, z: 2316.5994}
+    tangent: {x: -4.51474, y: -4.43943, z: 33.63672}
     roll: 0
-  - position: {x: 56.045147, y: -173.2222, z: 4764.024}
-    tangent: {x: -0.37001038, y: -27.169205, z: 26.533691}
+  - position: {x: 66.529625, y: -118.969864, z: 2453.246}
+    tangent: {x: 0, y: -3.954193, z: 18.466064}
     roll: 0
-  - position: {x: 55.64638, y: -310.18094, z: 4870.3584}
-    tangent: {x: -0.37001038, y: -0.4340515, z: 34.4292}
+  - position: {x: 66.15331, y: -124.68697, z: 2532.7986}
+    tangent: {x: 0, y: 0, z: 34.4292}
     roll: 0
-  - position: {x: 55.82428, y: -313.62476, z: 5108.2773}
-    tangent: {x: -2.5346603, y: -0.4340515, z: 34.302246}
+  - position: {x: 67.6278, y: -122.33431, z: 3206.188}
+    tangent: {x: 0, y: 0, z: 124.26123}
     roll: 0
-  - position: {x: 7.1474953, y: -316.13385, z: 5265.9365}
-    tangent: {x: 4.974333, y: -2.8840942, z: 66.171875}
+  - position: {x: 68.45396, y: -121.569954, z: 3412.157}
+    tangent: {x: -0.0026474, y: -0.10308838, z: 28.804932}
     roll: 0
-  - position: {x: 32.63978, y: -319.80295, z: 5489.2866}
-    tangent: {x: -11.598419, y: -1.4647827, z: 55.37256}
+  - position: {x: 69.36022, y: -153.85677, z: 3484.2283}
+    tangent: {x: 0, y: -22.388672, z: 22.110596}
     roll: 0
-  - position: {x: -101.36188, y: -289.26273, z: 5780.8}
-    tangent: {x: -62.81624, y: 25.924988, z: 74.0708}
+  - position: {x: 68.95772, y: -284.7351, z: 3578.3552}
+    tangent: {x: -0.0037231445, y: -5.2731323, z: 40.46338}
     roll: 0
-  - position: {x: -179.22394, y: -264.96158, z: 5864.3267}
-    tangent: {x: -11.733475, y: 1.4594116, z: 10.646973}
+  - position: {x: 69.6073, y: -289.17252, z: 3795.0652}
+    tangent: {x: -1.7961731, y: 0.4173584, z: 40.989502}
     roll: 0
-  - position: {x: -280.00537, y: -313.23956, z: 5973.516}
-    tangent: {x: -35.433014, y: -39.566193, z: 72.4375}
+  - position: {x: 28.105265, y: -291.45114, z: 3921.211}
+    tangent: {x: -13.6330385, y: 0, z: 49.296875}
+    roll: 0
+  - position: {x: 27.28445, y: -295.88654, z: 4055.9048}
+    tangent: {x: 8.236759, y: -0.036712646, z: 37.51123}
+    roll: 0
+  - position: {x: 42.51448, y: -296.1043, z: 4177.9297}
+    tangent: {x: -3.1096916, y: -0.007171631, z: 45.743164}
+    roll: 0
+  - position: {x: -36.68976, y: -292.19162, z: 4411.4355}
+    tangent: {x: -41.345413, y: 9.165253, z: 61.08203}
+    roll: 0
+  - position: {x: -108.48384, y: -268.59216, z: 4508.213}
+    tangent: {x: -29.657852, y: 13.253326, z: 31.094727}
+    roll: 0
+  - position: {x: -189.21762, y: -245.09566, z: 4588.3276}
+    tangent: {x: -35.642654, y: -0.18154907, z: 31.811035}
+    roll: 0
+  - position: {x: -289.75098, y: -321.2111, z: 4717.3745}
+    tangent: {x: -14.442993, y: -20.797485, z: 28.529297}
+    roll: 0
+  - position: {x: -326.8758, y: -382.6186, z: 4875.69}
+    tangent: {x: 0, y: 0, z: 67.36572}
+    roll: 0
+  - position: {x: -322.743, y: -379.98822, z: 5371.015}
+    tangent: {x: 0, y: 0, z: 51.379395}
+    roll: 0
+  - position: {x: -320.26505, y: -382.67853, z: 5510.8765}
+    tangent: {x: 0.5481262, y: 1.3313904, z: 24.139648}
+    roll: 0
+  - position: {x: -288.17194, y: -378.59628, z: 5624.5366}
+    tangent: {x: 14.133087, y: -1.7499695, z: 28.686035}
+    roll: 0
+  - position: {x: -190.30814, y: -376.3471, z: 5873.1714}
+    tangent: {x: 21.261093, y: 1.4594116, z: 61.589355}
+    roll: 0
+  - position: {x: -313.10217, y: -379.47586, z: 6015.4697}
+    tangent: {x: -35.433014, y: -6.8260803, z: 72.4375}
     roll: 0
   - position: {x: -339.0602, y: -409.35458, z: 6247.8584}
     tangent: {x: 2.066681, y: 1.952301, z: 181.40039}
