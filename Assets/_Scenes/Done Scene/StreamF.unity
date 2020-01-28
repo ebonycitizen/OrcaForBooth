@@ -36413,7 +36413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: BoneF
-  unloadWaitSec: 10
+  unloadWaitSec: 6
   waitActiveSec: 0.15
   fogData: {fileID: 11400000, guid: 56c26da1fec36ec47be60b70af96dc73, type: 2}
   postEffect: {fileID: 139210859366275272, guid: 686d7e5bb80a88a42ac58ba1d7b4ee02,

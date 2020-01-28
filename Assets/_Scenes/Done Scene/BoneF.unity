@@ -32404,7 +32404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &995158006
 Light:
   m_ObjectHideFlags: 0
@@ -43473,7 +43473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: EndingF
-  unloadWaitSec: 5
+  unloadWaitSec: 8
   waitActiveSec: 0
   fogData: {fileID: 11400000, guid: 56c26da1fec36ec47be60b70af96dc73, type: 2}
   postEffect: {fileID: 139210859366275272, guid: 686d7e5bb80a88a42ac58ba1d7b4ee02,
@@ -48178,22 +48178,22 @@ PrefabInstance:
     - target: {fileID: 3682416487856800697, guid: 7105cb0f400b347418e4ecc1189990e8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5974300888203454188, guid: 7105cb0f400b347418e4ecc1189990e8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.899998
+      value: 51.2
       objectReference: {fileID: 0}
     - target: {fileID: 5974300888203454188, guid: 7105cb0f400b347418e4ecc1189990e8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -26.700012
+      value: -31
       objectReference: {fileID: 0}
     - target: {fileID: 5974300888203454188, guid: 7105cb0f400b347418e4ecc1189990e8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 51.300194
+      value: 34.8
       objectReference: {fileID: 0}
     - target: {fileID: 5974300888203454188, guid: 7105cb0f400b347418e4ecc1189990e8,
         type: 3}
@@ -48238,17 +48238,17 @@ PrefabInstance:
     - target: {fileID: 5974300888203454188, guid: 7105cb0f400b347418e4ecc1189990e8,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.27742255
+      value: 0.23236081
       objectReference: {fileID: 0}
     - target: {fileID: 5974300888203454188, guid: 7105cb0f400b347418e4ecc1189990e8,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.23648024
+      value: 0.19806875
       objectReference: {fileID: 0}
     - target: {fileID: 5974300888203454188, guid: 7105cb0f400b347418e4ecc1189990e8,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.27742255
+      value: 0.23236081
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7105cb0f400b347418e4ecc1189990e8, type: 3}
