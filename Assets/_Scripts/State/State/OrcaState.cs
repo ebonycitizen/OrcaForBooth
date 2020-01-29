@@ -38,6 +38,8 @@ public partial class OrcaState : MonoBehaviour
     private Grab rightHand;
     [SerializeField]
     private Grab leftHand;
+    [SerializeField]
+    private ControllerHand controllerHand;
 
     [SerializeField] //for debug
     private GameObject rayObject;
