@@ -554,7 +554,8 @@ GameObject:
   m_Component:
   - component: {fileID: 899151234}
   - component: {fileID: 899151235}
-  - component: {fileID: 6050790135427735623}
+  - component: {fileID: 1732134966003390806}
+  - component: {fileID: 4913547879901461382}
   m_Layer: 0
   m_Name: VrHand
   m_TagString: Untagged
@@ -631,19 +632,37 @@ MonoBehaviour:
   fallbackCurlAction:
     actionPath: /actions/default/in/Squeeze
     needsReinit: 0
---- !u!65 &6050790135427735623
-BoxCollider:
+--- !u!114 &1732134966003390806
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899151233}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.027774049, y: 0.1, z: 0.13884583}
-  m_Center: {x: -0.01157074, y: 0, z: 0.082948305}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11efa0b47559e53499724d50260ddd13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocityAverageFrames: 20
+  angularVelocityAverageFrames: 11
+  estimateOnAwake: 1
+--- !u!114 &4913547879901461382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899151233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f94c412f08d3884db17998a6f172709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VE: {fileID: 1732134966003390806}
+  threshold: 1
+  meshRenderer: {fileID: 20233666}
+  waveMat: {fileID: 2100000, guid: 4e2d514301fe7c244ac857f1d7bd3c05, type: 2}
 --- !u!1 &995394054
 GameObject:
   m_ObjectHideFlags: 0

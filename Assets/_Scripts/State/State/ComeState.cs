@@ -47,7 +47,10 @@ public partial class OrcaState
             if (path.hasDone)
             {
                 if (rightHand.FirstContact || Context.controllerHand.FirstContact || Input.GetKeyDown(KeyCode.Return))
-                    stateMachine.SendEvent((int)StateEventId.Idle);
+                {
+                    //stateMachine.SendEvent((int)StateEventId.Idle);
+                    path.EndEvent();
+                }
             }
 
             if (!gotoPath)

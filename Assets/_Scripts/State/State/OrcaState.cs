@@ -60,6 +60,8 @@ public partial class OrcaState : MonoBehaviour
     [SerializeField]
     private MyCinemachineDollyCart dolly;
 
+    public bool CanWave { get; set; }
+
     private void Awake()
     {
         stateMachine = new ImtStateMachine<OrcaState>(this);
@@ -184,6 +186,11 @@ public partial class OrcaState : MonoBehaviour
             return true;
         }
         if (tag == "G_Swim" && stateMachine.CurrentStateName == "IdleState")
+        {
+            stateMachine.SendEvent((int)StateEventId.Swim);
+            return true;
+        }
+        if (tag == "G_Swim" && stateMachine.CurrentStateName == "ComeState")
         {
             stateMachine.SendEvent((int)StateEventId.Swim);
             return true;

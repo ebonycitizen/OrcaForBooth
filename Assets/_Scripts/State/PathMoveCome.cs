@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using BrunoMikoski.TextJuicer;
+using SWS;
 
 public class PathMoveCome : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class PathMoveCome : MonoBehaviour
 
     [SerializeField]
     private GameObject tutorial_4;
+    [SerializeField]
+    private GameObject tutorial_5;
 
     [SerializeField]
     private ParticleSystem[] illusionFishes;
@@ -32,6 +35,10 @@ public class PathMoveCome : MonoBehaviour
 
     [SerializeField]
     private MyCinemachineDollyCart dollyCart;
+
+    [SerializeField]
+    private GameObject sendObj;
+    private OrcaState orcaState;
 
 
     // Start is called before the first frame update
@@ -54,6 +61,8 @@ public class PathMoveCome : MonoBehaviour
            .SetLookAt(0.05f, Vector3.forward))
            .AppendCallback(() => hasDone = true)
            .AppendCallback(() => UISeq1());
+
+        orcaState = Object.FindObjectOfType<OrcaState>();
     }
 
     // Update is called once per frame
@@ -71,6 +80,8 @@ public class PathMoveCome : MonoBehaviour
         var textGroup2 = tutorial_4.GetComponentInChildren<CanvasGroup>();
         textGroup2.DOFade(0f, 0f);
 
+        var textGroup3 = tutorial_5.GetComponentInChildren<CanvasGroup>();
+        textGroup3.DOFade(0f, 0f);
     }
 
     private void UISeq1()
@@ -93,19 +104,34 @@ public class PathMoveCome : MonoBehaviour
 
         var textGroup1 = tutorial_3.GetComponentInChildren<CanvasGroup>();
         var textGroup2 = tutorial_4.GetComponentInChildren<CanvasGroup>();
+        var textGroup3 = tutorial_5.GetComponentInChildren<CanvasGroup>();
 
         var anim2 = tutorial_4.GetComponentInChildren<JuicedText>();
+        var anim3 = tutorial_5.GetComponentInChildren<JuicedText>();
 
         var duration = 1f;
 
         s_1.Append(textGroup1.DOFade(0f, duration))
+            //show tutorial_4
             .Join(textGroup2.DOFade(1f, duration))
-            .AppendCallback(()=> StartCoroutine("ShowIllusionFish"))
+            .AppendCallback(() => StartCoroutine("ShowIllusionFish"))
             .AppendCallback(() => anim2.Play())
+            //del tutorial_3
             .AppendInterval(1f)
             .AppendCallback(() => tutorial_3.SetActive(false))
+
             .AppendInterval(10f)
             .Append(textGroup2.DOFade(0f, duration))
+            //show tutorial_5
+            .Join(textGroup3.DOFade(1f, duration))
+            .AppendCallback(() => anim3.Play())
+            //del tutorial_4
+            .AppendInterval(1f)
+            .AppendCallback(() => tutorial_4.SetActive(false))
+
+            .AppendInterval(7f)
+            .Append(textGroup3.DOFade(0f, duration))
+            //del tutorial_5
             .AppendInterval(1f)
             .AppendCallback(() => tutorial_4.SetActive(false));
 
@@ -114,7 +140,7 @@ public class PathMoveCome : MonoBehaviour
 
     private IEnumerator ShowIllusionFish()
     {
-        foreach(var p in illusionFishes)
+        foreach (var p in illusionFishes)
         {
             p.Play();
             yield return new WaitForSeconds(0.5f);
@@ -129,11 +155,27 @@ public class PathMoveCome : MonoBehaviour
     public void EndEvent()
     {
         StartCoroutine("EventEnd");
+
+        bool hasChangeState = orcaState.ChangeState("G_Swim", sendObj);
+
+        sendObj.GetComponent<splineMove>().StartMove();
+
+        if (!hasChangeState)
+            return;
+
+        StartCoroutine("ChangeState");
+    }
+    private IEnumerator ChangeState()
+    {
+        yield return new WaitForSeconds(4f);
+        {
+            bool hasChangeState = orcaState.ChangeState("G_Idle", sendObj);
+        }
     }
     private IEnumerator EventEnd()
     {
         UISeq2();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         float time = 10f;
         while (time < 10)
         {
