@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using BrunoMikoski.TextJuicer;
+using SWS;
 
 public class PathMoveEvent : MonoBehaviour
 {
@@ -10,30 +12,41 @@ public class PathMoveEvent : MonoBehaviour
     [SerializeField]
     private float moveTime;
    
-    [SerializeField]
-    private Transform pathRef2;
-    [SerializeField]
-    private float moveTime2;
-
-    [SerializeField]
-    private Transform glitter;
-    [SerializeField]
-    private Transform cameraRig;
 
     [SerializeField]
     private Transform orca;
-
-    [SerializeField]
-    private float distance;
-
+    
     [SerializeField]
     private GameObject tutorial_2;
 
+    [SerializeField]
+    private GameObject tutorial_3;
+
+    [SerializeField]
+    private GameObject tutorial_4;
+    [SerializeField]
+    private GameObject tutorial_5;
+
+    [SerializeField]
+    private GameObject tutorial_6;
+
+
     private Sequence s;
     private Sequence s2;
-
-    private bool lockRotate=false;
+    
     public bool canTouch { get; private set; }
+
+    public bool hasDone { get; private set; }
+
+    [SerializeField]
+    private ParticleSystem[] illusionFishes;
+
+    [SerializeField]
+    private MyCinemachineDollyCart dollyCart;
+
+    [SerializeField]
+    private GameObject sendObj;
+    private OrcaState orcaState;
 
     // Start is called before the first frame update
     void Start()
@@ -45,42 +58,101 @@ public class PathMoveEvent : MonoBehaviour
         {
             movePath[i] = pathRef.GetChild(i).position;
         }
-
-
-        Vector3[] movePath2 = new Vector3[pathRef2.childCount];
-
-        for (int i = 0; i < movePath2.Length; i++)
-        {
-            movePath2[i] = pathRef2.GetChild(i).position;
-        }
-
-        var rotation = Vector3.forward * 360;
+        
 
         s = DOTween.Sequence();
-
-        //s.Join(transform.DOBlendableLocalRotateBy(rotation, 1, RotateMode.FastBeyond360).OnComplete(()=>lockRotate=true))
-        //    .Join(transform.DOLocalPath(movePath, moveTime, PathType.CatmullRom)
-        //    .SetEase(Ease.Linear)
-        //    .SetLookAt(0.05f, Vector3.forward))
-        //    .AppendCallback(() => NextEvent());
-
+        
         s.AppendCallback(() => DisableUISeq())
             .Join(transform.DOPath(movePath, moveTime, PathType.CatmullRom)
             .SetEase(Ease.Linear)
-            .SetLookAt(0.05f, Vector3.forward))
-            .AppendCallback(() => NextEvent())
-            //.AppendInterval(2f)
-            .AppendCallback(() => SoundManager.Instance.PlayOntShotSe(ESeTable.Sparkle_1))
-            .AppendCallback(() => glitter.gameObject.SetActive(true));
-            
-
-
-        s2 = DOTween.Sequence();
-        s2.Join(transform.DOPath(movePath2, moveTime2, PathType.CatmullRom)
-            .SetOptions(true).SetEase(Ease.Linear)
             .SetLookAt(0.05f, Vector3.forward));
 
-        //s.Play();
+        s2 = DOTween.Sequence();
+        s2.AppendInterval(moveTime - 2)
+            .AppendCallback(() => hasDone = true)
+           .AppendCallback(() => UISeq1());
+
+        InitUI();
+        orcaState = Object.FindObjectOfType<OrcaState>();
+
+    }
+
+    private void InitUI()
+    {
+        var textGroup1 = tutorial_3.GetComponentInChildren<CanvasGroup>();
+        textGroup1.DOFade(0f, 0f);
+
+        var textGroup2 = tutorial_4.GetComponentInChildren<CanvasGroup>();
+        textGroup2.DOFade(0f, 0f);
+
+        var textGroup3 = tutorial_5.GetComponentInChildren<CanvasGroup>();
+        textGroup3.DOFade(0f, 0f);
+
+        var textGroup4 = tutorial_6.GetComponentInChildren<CanvasGroup>();
+        textGroup3.DOFade(0f, 0f);
+    }
+
+    private void UISeq1()
+    {
+        Sequence s_1 = DOTween.Sequence();
+
+        var textGroup = tutorial_3.GetComponentInChildren<CanvasGroup>();
+        var anim1 = tutorial_3.GetComponentInChildren<JuicedText>();
+        var duration = 1f;
+
+        s_1.Append(textGroup.DOFade(1f, duration))
+            .AppendCallback(() => anim1.Play());
+
+        s_1.Play();
+    }
+
+    private void UISeq2()
+    {
+        Sequence s_1 = DOTween.Sequence();
+
+        var textGroup1 = tutorial_3.GetComponentInChildren<CanvasGroup>();
+        var textGroup2 = tutorial_4.GetComponentInChildren<CanvasGroup>();
+        var textGroup3 = tutorial_5.GetComponentInChildren<CanvasGroup>();
+
+        var anim2 = tutorial_4.GetComponentInChildren<JuicedText>();
+        var anim3 = tutorial_5.GetComponentInChildren<JuicedText>();
+
+        var duration = 1f;
+
+        s_1.Append(textGroup1.DOFade(0f, duration))
+            //show tutorial_4
+            .Join(textGroup2.DOFade(1f, duration))
+            .AppendCallback(() => StartCoroutine("ShowIllusionFish"))
+            .AppendCallback(() => anim2.Play())
+            //del tutorial_3
+            .AppendInterval(1f)
+            .AppendCallback(() => tutorial_3.SetActive(false))
+
+            .AppendInterval(10f)
+            .Append(textGroup2.DOFade(0f, duration))
+            //show tutorial_5
+            .Join(textGroup3.DOFade(1f, duration))
+            .AppendCallback(() => anim3.Play())
+            //del tutorial_4
+            .AppendInterval(1f)
+            .AppendCallback(() => tutorial_4.SetActive(false))
+
+            .AppendInterval(7f)
+            .Append(textGroup3.DOFade(0f, duration))
+            //del tutorial_5
+            .AppendInterval(1f)
+            .AppendCallback(() => tutorial_4.SetActive(false));
+
+        s_1.Play();
+    }
+
+    private IEnumerator ShowIllusionFish()
+    {
+        foreach (var p in illusionFishes)
+        {
+            p.Play();
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 
     private void DisableUISeq()
@@ -88,35 +160,65 @@ public class PathMoveEvent : MonoBehaviour
         Sequence s_1 = DOTween.Sequence();
 
         var textGroup = tutorial_2.GetComponentInChildren<CanvasGroup>();
+        var textGroup2 = tutorial_6.GetComponentInChildren<CanvasGroup>();
         var duration = 1f;
 
+        var anim1 = tutorial_6.GetComponentInChildren<JuicedText>();
+        
         s_1.Append(textGroup.DOFade(0f, 1f))
+            .Join(textGroup2.DOFade(1f, duration))
+            
             .AppendInterval(1f)
-            .AppendCallback(() => tutorial_2.SetActive(false));
+            .AppendCallback(() => anim1.Play())
+            
+            .AppendCallback(() => tutorial_2.SetActive(false))
+            .AppendInterval(6f)
+            .Append(textGroup2.DOFade(0f, duration))
+            .AppendCallback(() => tutorial_6.SetActive(false));
 
         s_1.Play();
     }
-
-    private void NextEvent()
+    public void EndEvent()
     {
-        s2.Play().SetLoops(-1);
-        glitter.gameObject.SetActive(true);
+        StartCoroutine("EventEnd");
+
+        bool hasChangeState = orcaState.ChangeState("G_Swim", sendObj);
+
+        sendObj.GetComponent<splineMove>().StartMove();
+
+        if (!hasChangeState)
+            return;
+
+        StartCoroutine("ChangeState");
     }
-
-    // Update is called once per frame
-    void Update()
+    private IEnumerator ChangeState()
     {
-        Vector3 relativePos = (cameraRig.transform.position - orca.transform.position).normalized;
+        yield return new WaitForSeconds(4f);
+        {
+            bool hasChangeState = orcaState.ChangeState("G_Idle", sendObj);
+        }
+    }
+    private IEnumerator EventEnd()
+    {
+        UISeq2();
+        yield return new WaitForSeconds(3f);
+        float time = 10f;
+        while (time < 10)
+        {
 
-        //if (lockRotate)
-            transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, 0);
+            dollyCart.m_Speed = time;
+            time += Time.deltaTime * 3f;
+            yield return null;
+        }
 
-        if (glitter != null)
-            glitter.position = orca.position + relativePos * distance;
+        dollyCart.m_Speed = 10f;
+
+        yield return null;
     }
 
     public void startEvent()
     {
         s.Play();
+        s2.Play();
     }
 }

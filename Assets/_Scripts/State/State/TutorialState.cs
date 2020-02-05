@@ -18,6 +18,11 @@ public partial class OrcaState
 
         private Speaker speaker;
 
+        private Grab rightHand;
+        private Grab leftHand;
+
+
+
         protected internal override void Enter()
         {
             orca = Context.orcaModel.transform;
@@ -28,6 +33,9 @@ public partial class OrcaState
 
             gotoPath = true;
             ratio = 0;
+
+            rightHand = Context.rightHand;
+            leftHand = Context.leftHand;
 
             SoundManager.Instance.PlayOneShotDelay3DSe(ESeTable.Orac_7, speaker, 2);
         }
@@ -40,6 +48,12 @@ public partial class OrcaState
                 orca.position = Vector3.Lerp(orca.position, rayObject.position, Time.fixedDeltaTime);
                 orca.rotation = Quaternion.Lerp(orca.rotation, Quaternion.Euler(rayObject.eulerAngles), Time.fixedDeltaTime);
 
+                
+                if (rightHand.FirstContact || Context.controllerHand.FirstContact || Input.GetKeyDown(KeyCode.Return))
+                {
+                    //stateMachine.SendEvent((int)StateEventId.Idle);
+                    path.EndEvent();
+                }
                 return;
             }
 
