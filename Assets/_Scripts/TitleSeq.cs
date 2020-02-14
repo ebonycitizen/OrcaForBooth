@@ -115,18 +115,18 @@ public class TitleSeq : MonoBehaviour
         floatObj.gameObject.SetActive(true);
 
         player.AddForce(-Vector3.up * 2f, ForceMode.VelocityChange);
-        floatObj.AddForce(Vector3.up * 5f, ForceMode.VelocityChange);
+        floatObj.AddForce(Vector3.up * 6f, ForceMode.VelocityChange);
 
 
         var elaspedTime = dof.focusDistance.value;
 
-        skyboxMat.DOColor(topColor, "_Color1", elaspedTime);
-        skyboxMat.DOColor(medColor, "_Color2", elaspedTime);
-        skyboxMat.DOColor(downColor, "_Color3", elaspedTime);
+        skyboxMat.DOColor(topColor, "_Color1", elaspedTime * 0.75f);
+        skyboxMat.DOColor(medColor, "_Color2", elaspedTime * 0.75f);
+        skyboxMat.DOColor(downColor, "_Color3", elaspedTime * 0.75f);
 
         while (elaspedTime >= 0)
         {
-            elaspedTime -= Time.deltaTime;
+            elaspedTime -= Time.deltaTime * 1.5f;
             if (dof)
                 dof.focusDistance.value = elaspedTime;
 
@@ -139,7 +139,7 @@ public class TitleSeq : MonoBehaviour
         SoundManager.Instance.FadeAllSe(1f);
         rain.Stop();
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(4f);
 
         SoundManager.Instance.ResetSeVolume();
         SceneManager.LoadSceneAsync("Loading", LoadSceneMode.Single);
