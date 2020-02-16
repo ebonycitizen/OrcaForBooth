@@ -26,7 +26,7 @@ public class LoadTutorial : MonoBehaviour
 
         //SteamVR_LoadLevel.Begin("TutorialF");
         //async.allowSceneActivation = false;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.5f);
         
 
 
