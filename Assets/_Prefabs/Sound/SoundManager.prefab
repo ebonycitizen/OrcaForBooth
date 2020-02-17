@@ -271,9 +271,9 @@ MonoBehaviour:
   - BgmType: 6
     BgmClip: {fileID: 8300000, guid: 3c24f577a6067a4408f42254817e822c, type: 3}
   - BgmType: 7
-    BgmClip: {fileID: 8300000, guid: 03ce2373ce7eee047ad5d9fb64472185, type: 3}
+    BgmClip: {fileID: 8300000, guid: 113b8792977d7de42bd6fa62890a8cd1, type: 3}
   - BgmType: 8
-    BgmClip: {fileID: 8300000, guid: 5f2e7e5ed3421bf4ca74ad970ed91e92, type: 3}
+    BgmClip: {fileID: 8300000, guid: 6a56bd05885b0d74ea87ad7ce8b278bc, type: 3}
   - BgmType: 9
     BgmClip: {fileID: 8300000, guid: 0c19b2bc34635f24fa19273682157725, type: 3}
   - BgmType: 10

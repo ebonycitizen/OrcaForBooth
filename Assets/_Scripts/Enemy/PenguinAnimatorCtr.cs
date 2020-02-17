@@ -77,7 +77,7 @@ namespace SWS
             if (playingState != null)
             {
                 //ランダムにストップする時間を延長させ
-                Observable.Timer(TimeSpan.FromSeconds(Random.value))
+                Observable.Timer(TimeSpan.FromSeconds(0))
                     .Subscribe(_ =>
                     {
                         StopAnimation();
@@ -87,7 +87,7 @@ namespace SWS
             else
             {
                 //ランダムにストップする時間を延長させ
-                Observable.Timer(TimeSpan.FromSeconds(Random.value))
+                Observable.Timer(TimeSpan.FromSeconds(0))
                     .Subscribe(_ =>
                     {
                         PlayAnimation(name);

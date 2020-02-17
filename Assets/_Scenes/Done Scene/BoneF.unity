@@ -1103,7 +1103,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 90514a1978bdd3649b82c1acad3f83ca, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c29dea06f327fe24e8fc7d0da8be24d1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
@@ -7216,7 +7216,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: bb8932c135c1473498e35f891c458021, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e49ab907022cd5c408d28356479dd426, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
@@ -22032,7 +22032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objDisable:
   - {fileID: 965914179}
-  unloadTime: 8
+  unloadTime: 15
 --- !u!4 &635775134
 Transform:
   m_ObjectHideFlags: 0
@@ -32294,6 +32294,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3765551872770906628, guid: 16074907dd55a324187b5b21cdf07551,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999722
+      objectReference: {fileID: 0}
     - target: {fileID: 3765551872754275463, guid: 16074907dd55a324187b5b21cdf07551,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32369,15 +32374,33 @@ PrefabInstance:
       propertyPath: rayObject
       value: 
       objectReference: {fileID: 527888737}
-    - target: {fileID: 1303011328810118091, guid: 16074907dd55a324187b5b21cdf07551,
-        type: 3}
-      propertyPath: m_IsKinematic
+    - target: {fileID: 1413695997, guid: 16074907dd55a324187b5b21cdf07551, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413695997, guid: 16074907dd55a324187b5b21cdf07551, type: 3}
+      propertyPath: heightFog
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3765551872770906628, guid: 16074907dd55a324187b5b21cdf07551,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9999722
+    - target: {fileID: 1413695997, guid: 16074907dd55a324187b5b21cdf07551, type: 3}
+      propertyPath: distanceFog
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413695997, guid: 16074907dd55a324187b5b21cdf07551, type: 3}
+      propertyPath: useRadialDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413695997, guid: 16074907dd55a324187b5b21cdf07551, type: 3}
+      propertyPath: height
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413695997, guid: 16074907dd55a324187b5b21cdf07551, type: 3}
+      propertyPath: startDistance
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413695997, guid: 16074907dd55a324187b5b21cdf07551, type: 3}
+      propertyPath: heightDensity
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 8169514499329488540, guid: 16074907dd55a324187b5b21cdf07551,
         type: 3}
@@ -32479,34 +32502,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1413695997, guid: 16074907dd55a324187b5b21cdf07551, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1413695997, guid: 16074907dd55a324187b5b21cdf07551, type: 3}
-      propertyPath: heightFog
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1413695997, guid: 16074907dd55a324187b5b21cdf07551, type: 3}
-      propertyPath: distanceFog
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1413695997, guid: 16074907dd55a324187b5b21cdf07551, type: 3}
-      propertyPath: useRadialDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1413695997, guid: 16074907dd55a324187b5b21cdf07551, type: 3}
-      propertyPath: height
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 1413695997, guid: 16074907dd55a324187b5b21cdf07551, type: 3}
-      propertyPath: startDistance
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 1413695997, guid: 16074907dd55a324187b5b21cdf07551, type: 3}
-      propertyPath: heightDensity
-      value: 0.01
-      objectReference: {fileID: 0}
     - target: {fileID: 3765551872908460774, guid: 16074907dd55a324187b5b21cdf07551,
         type: 3}
       propertyPath: m_Enabled
@@ -32530,6 +32525,11 @@ PrefabInstance:
     - target: {fileID: 2121254423349004257, guid: 16074907dd55a324187b5b21cdf07551,
         type: 3}
       propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303011328810118091, guid: 16074907dd55a324187b5b21cdf07551,
+        type: 3}
+      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 978166224910816700, guid: 16074907dd55a324187b5b21cdf07551,
@@ -35330,7 +35330,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ddc85e19635db164fb905baf55969c06, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e15e974aa99d32249b56143d6e3141c6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
@@ -47667,7 +47667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: EndingF
-  unloadWaitSec: 8
+  unloadWaitSec: 15
   waitActiveSec: 0
   fogData: {fileID: 11400000, guid: 56c26da1fec36ec47be60b70af96dc73, type: 2}
   postEffect: {fileID: 139210859366275272, guid: 686d7e5bb80a88a42ac58ba1d7b4ee02,
@@ -54407,7 +54407,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 07013702b42b6a14e9460ec74d4f5030, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2cf643075058cbc4b85972dfa67320a0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
