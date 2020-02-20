@@ -111,7 +111,7 @@ public class OrcaCollision : MonoBehaviour
                 if (grab.GetIsRightHand() && !grab.FirstContact)
                 {
                     touchTimes++;
-                    if(touchTimes >= 2)
+                    if(touchTimes >= 1)
                         grab.FirstContact = true;
                 }
             }

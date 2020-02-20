@@ -31,12 +31,12 @@ public class HandAction : MonoBehaviour
         if (threshold < acceleration)
         {
             //Debug.Log(acceleration);
-            meshRenderer.material = waveMat;
+            //meshRenderer.material = waveMat;
             HasWave = true;
         }
         else
         {
-            meshRenderer.material = originMat;
+            //meshRenderer.material = originMat;
             HasWave = false;
         }
 

@@ -46,7 +46,7 @@ public class WaveHandAction : MonoBehaviour
             controllerHand.ControllerHaptic();
 
         if(HI5_Manager.GetGloveStatus().IsGloveAvailable(HI5.Hand.RIGHT))
-            HI5.HI5_Manager.EnableRightVibration(500);
+            HI5.HI5_Manager.EnableRightVibration(1000);
 
         heart.Play();
         animator.SetTrigger("Wave");
