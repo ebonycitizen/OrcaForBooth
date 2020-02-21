@@ -22,6 +22,5 @@ public class ControllerHand : MonoBehaviour
 
     public void ControllerHaptic()
     {
-        hapicAction.Execute(0, 0.5f, 1f, 100f, SteamVR_Input_Sources.RightHand);
-    }
+        hapicAction.Execute(0, 1f, 1.5f, 200f, SteamVR_Input_Sources.RightHand);    }
 }
